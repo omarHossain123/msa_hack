@@ -1,61 +1,20 @@
-import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [feedback, setFeedback] = useState("");
-
-  const registerUser = async () => {
-    try {
-      const res = await fetch("http://127.0.0.1:5000/register_user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
-      const data = await res.json();
-      setFeedback(data.message || "Registration succeeded.");
-    } catch (err) {
-      console.error(err);
-      setFeedback("Registration failed.");
-    }
-  };
-
-  const loginUser = async () => {
-    try {
-      const res = await fetch("http://127.0.0.1:5000/login_user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setFeedback(data.message);
-      } else {
-        setFeedback(data.error || "Login failed.");
-      }
-    } catch (err) {
-      console.error(err);
-      setFeedback("Login failed.");
-    }
-  };
-
-  return (
-    <div>
-      <h2>Register or Login</h2>
-      <input
-        placeholder="Username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        placeholder="Password"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={registerUser}>Register</button>
-      <button onClick={loginUser}>Login</button>
-      <p>{feedback}</p>
-    </div>
-  );
+  return ( <div>
+      <nav>
+        <Link to="/" style={{ margin: 10 }}>Home</Link>
+        <Link to="/login" style={{ margin: 10 }}>Login</Link>
+        <Link to="/register" style={{ margin: 10 }}>Register</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<div>Welcome to Virtual ER Queue</div>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </div>);
 }
 
 export default App;

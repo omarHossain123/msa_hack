@@ -14,9 +14,12 @@ function Login() {
         body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
-      setFeedback(res.ok ? data.message : data.error || "Login failed.");
-    } catch (err) {
-      console.error(err);
+      if (res.ok) {
+        setFeedback(data.message);
+      } else {
+        setFeedback(data.error || "Login failed.");
+      }
+    } catch {
       setFeedback("Login failed.");
     }
   };
@@ -26,15 +29,12 @@ function Login() {
       <h2>Login</h2>
       <form onSubmit={loginUser}>
         <input
-          type="text"
           placeholder="Username"
-          value={username}
           onChange={(e) => setUsername(e.target.value)}
         /><br/>
         <input
-          type="password"
           placeholder="Password"
-          value={password}
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         /><br/>
         <button type="submit">Login</button>
