@@ -3,10 +3,22 @@ from flask_cors import CORS
 import json
 from datetime import datetime
 from triage import assess_severity
+from login import login_bp, db, login_manager
 import os
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
+app.config["SECRET_KEY"] = "WOAH, THIS IS SECRET! AND TOOOTALLY RANDOM! sinjab sucks "
 CORS(app)
+
+# Initialize extensions with the app
+db.init_app(app)
+login_manager.init_app(app)
+
+with app.app_context():
+    db.create_all()
+
+app.register_blueprint(login_bp)
 
 def load_waiting_list():
     with open('mock_data.json', 'r') as f:

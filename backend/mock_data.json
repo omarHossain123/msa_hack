@@ -38,6 +38,15 @@
             ],
             "triage_level": 4,
             "estimated_wait_time": 60
+        },
+        {
+            "id": 5,
+            "arrival_time": "2025-02-08T13:55:28.461090",
+            "symptoms": [
+                "chest pain"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
         }
     ]
 }
