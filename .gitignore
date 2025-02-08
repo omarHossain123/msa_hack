@@ -1,0 +1,19 @@
+# Node.js / React (Frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.vite/
+
+# Python / Flask (Backend)
+backend/venv/
+backend/__pycache__/
+backend/.env
+backend/*.pyc
+backend/.pytest_cache/
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
