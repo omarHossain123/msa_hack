@@ -1,4 +1,5 @@
-import React from "react";
+import { Clock, AlertCircle, Activity, Users } from "lucide-react";
+import "./EstimatedWaitTime.css";
 
 const EstimatedWaitTime = ({ patient }) => {
   const getTriageDescription = (level) => {
@@ -12,81 +13,74 @@ const EstimatedWaitTime = ({ patient }) => {
     return descriptions[level] || "Unknown";
   };
 
-  const getTriageColor = (level) => {
-    const colors = {
-      1: "text-red-600",
-      2: "text-orange-600",
-      3: "text-yellow-600",
-      4: "text-green-600",
-      5: "text-blue-600",
-    };
-    return colors[level] || "text-gray-600";
-  };
-
   return (
-    <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="p-6">
-        <h2 className="text-xl font-bold text-center text-gray-900 mb-6">
-          Your Estimated Wait Time
-        </h2>
+    <div className="estimated-wait-container">
+      <div className="estimated-wait-box">
+        <div className="estimated-header">
+          <Clock className="h-6 w-6" />
+          <h2>Your Estimated Wait Time</h2>
+        </div>
 
-        <div className="space-y-6">
-          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-            <div className="space-y-1">
-              <p className="text-sm text-gray-500">Triage Level</p>
-              <p
-                className={`text-lg font-semibold ${getTriageColor(
-                  patient.triage_level
-                )}`}
-              >
-                Level {patient.triage_level}
-              </p>
-              <p className="text-sm text-gray-600">
-                {getTriageDescription(patient.triage_level)}
-              </p>
+        <div className="estimated-content">
+          {/* Main Status Card */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className={`estimated-section triage-${patient.triage_level}`}>
+              <div className="flex items-center gap-3 mb-4">
+                <Activity className="h-5 w-5" />
+                <h3 className="font-semibold">Triage Level</h3>
+              </div>
+              <div>
+                <p className="text-3xl font-bold">
+                  Level {patient.triage_level}
+                </p>
+                <p className="text-sm opacity-90">
+                  {getTriageDescription(patient.triage_level)}
+                </p>
+              </div>
             </div>
-            <div className="text-right space-y-1">
-              <p className="text-sm text-gray-500">Estimated Wait</p>
-              <div className="flex items-center gap-2">
-                <svg
-                  className="h-5 w-5 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <p className="text-2xl font-bold text-blue-600">
+
+            <div className="estimated-section wait-time">
+              <div className="flex items-center gap-3 mb-4">
+                <Clock className="h-5 w-5 text-blue-600" />
+                <h3 className="font-semibold text-blue-600">Wait Time</h3>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-blue-600">
                   {patient.estimated_wait_time}
                 </p>
-                <span className="text-sm text-gray-600">mins</span>
+                <p className="text-blue-600 opacity-90">minutes</p>
+                <p className="text-sm text-blue-600 opacity-90">
+                  Estimated time until you're seen
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
-            <svg
-              className="h-5 w-5 text-blue-600 mt-0.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <p className="text-sm text-blue-800">
-              Wait times are estimates and may change based on emergency cases.
-              Please seek immediate medical attention if your condition worsens.
-            </p>
+          {/* Position in Queue */}
+          <div className="queue-info">
+            <div className="flex items-center gap-3">
+              <Users className="h-5 w-5 text-gray-600" />
+              <p className="text-sm text-gray-600">
+                There are currently{" "}
+                <span className="font-semibold">{patient.queue_position}</span>{" "}
+                patients waiting to be seen
+              </p>
+            </div>
+          </div>
+
+          {/* Important Notice */}
+          <div className="notice-box">
+            <AlertCircle className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-sm text-amber-800 font-medium">
+                Important Notice
+              </p>
+              <p className="notice-text">
+                Wait times are estimates and may change based on emergency
+                cases. If your condition worsens, please notify staff
+                immediately or call emergency services.
+              </p>
+            </div>
           </div>
         </div>
       </div>

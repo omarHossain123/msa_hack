@@ -1,0 +1,123 @@
+/* AuthPage.css */
+
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.auth-header {
+  padding: 24px;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  color: white;
+  text-align: center;
+}
+
+.auth-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  opacity: 0.9;
+}
+
+.auth-body {
+  padding: 32px;
+}
+
+.auth-input-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.auth-input-container input {
+  width: 100%;
+  padding: 10px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.auth-input-container input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+.auth-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.feedback-box {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.feedback-error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.feedback-success {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.auth-button:hover {
+  background: linear-gradient(to right, #1d4ed8, #0891b2);
+}
+
+.auth-footer {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.auth-footer p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.auth-footer button {
+  margin-top: 4px;
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.auth-footer button:hover {
+  color: #1e40af;
+}

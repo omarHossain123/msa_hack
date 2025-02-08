@@ -5,10 +5,12 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { Bell } from "lucide-react";
 import SymptomForm from "./components/SymptomForm";
 import WaitingList from "./components/WaitingList";
 import EstimatedWaitTime from "./components/EstimatedWaitTime";
 import AuthPage from "./components/AuthPage";
+import "./App.css";
 
 const App = () => {
   const [waitingList, setWaitingList] = useState([]);
@@ -18,7 +20,6 @@ const App = () => {
 
   useEffect(() => {
     fetchWaitingList();
-    // Check if user is already logged in
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -68,7 +69,7 @@ const App = () => {
   };
 
   const MainContent = () => (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="main-content">
       {isAuthenticated ? (
         !currentPatient ? (
           <SymptomForm onSubmit={addPatient} />
@@ -84,21 +85,17 @@ const App = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
-        <nav className="bg-white shadow-sm">
-          <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <h1 className="text-xl font-bold text-gray-900">
-                ER Virtual Waiting Room
-              </h1>
+      <div className="app-container">
+        <nav className="navbar">
+          <div className="nav-content">
+            <div className="nav-left">
+              <Bell className="bell-icon" />
+              <h1 className="app-title">ER Virtual Waiting Room</h1>
             </div>
             {isAuthenticated && (
-              <div className="flex items-center gap-4">
-                <span className="text-gray-600">Welcome, {user?.name}</span>
-                <button
-                  onClick={handleLogout}
-                  className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
-                >
+              <div className="nav-right">
+                <span className="welcome-text">Welcome, {user?.name}</span>
+                <button onClick={handleLogout} className="logout-button">
                   Logout
                 </button>
               </div>
@@ -106,7 +103,7 @@ const App = () => {
           </div>
         </nav>
 
-        <main className="container mx-auto px-4 py-8">
+        <main className="main-container">
           <Routes>
             <Route
               path="/"

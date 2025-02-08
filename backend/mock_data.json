@@ -56,6 +56,42 @@
             ],
             "triage_level": 1,
             "estimated_wait_time": 0
+        },
+        {
+            "id": 7,
+            "arrival_time": "2025-02-08T17:14:27.092489",
+            "symptoms": [
+                "sore elbow"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 8,
+            "arrival_time": "2025-02-08T17:44:05.996350",
+            "symptoms": [
+                "sore throught"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 9,
+            "arrival_time": "2025-02-08T17:47:06.435863",
+            "symptoms": [
+                "heart ache"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 10,
+            "arrival_time": "2025-02-08T17:47:31.390620",
+            "symptoms": [
+                "chest pain"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
         }
     ]
 }
