@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { LockKeyhole, UserCircle2 } from "lucide-react";
+import "./AuthPage.css";
 
 const AuthPage = ({ onLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -35,67 +37,60 @@ const AuthPage = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">
-            ER Virtual Waiting Room
-          </h2>
-          <p className="text-gray-600 mt-2">
-            {isLogin ? "Sign in to your account" : "Create a new account"}
-          </p>
+    <div className="auth-container">
+      <div className="auth-box">
+        <div className="auth-header">
+          <h2>Welcome</h2>
+          <p>{isLogin ? "Sign in to your account" : "Create a new account"}</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          {feedback && (
-            <div
-              className={`p-4 rounded-md ${
-                feedback.includes("failed")
-                  ? "bg-red-50 text-red-600"
-                  : "bg-green-50 text-green-600"
-              }`}
-            >
-              {feedback}
+        <div className="auth-body">
+          <form onSubmit={handleSubmit} className="auth-form">
+            <div className="auth-input-container">
+              <UserCircle2 className="auth-icon" />
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
             </div>
-          )}
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            {isLogin ? "Sign In" : "Register"}
-          </button>
-        </form>
+            <div className="auth-input-container">
+              <LockKeyhole className="auth-icon" />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
 
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}
-          </p>
-          <button
-            onClick={() => setIsLogin(!isLogin)}
-            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-          >
-            {isLogin ? "Create an account" : "Sign in"}
-          </button>
+            {feedback && (
+              <div
+                className={`feedback-box ${
+                  feedback.includes("failed")
+                    ? "feedback-error"
+                    : "feedback-success"
+                }`}
+              >
+                {feedback}
+              </div>
+            )}
+
+            <button type="submit" className="auth-button">
+              {isLogin ? "Sign In" : "Register"}
+            </button>
+          </form>
+
+          <div className="auth-footer">
+            <p>
+              {isLogin ? "Don't have an account?" : "Already have an account?"}
+            </p>
+            <button onClick={() => setIsLogin(!isLogin)}>
+              {isLogin ? "Create an account" : "Sign in"}
+            </button>
+          </div>
         </div>
       </div>
     </div>
