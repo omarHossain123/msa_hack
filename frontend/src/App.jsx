@@ -1,21 +1,58 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import SymptomForm from "./components/SymptomForm";
+import WaitingList from "./components/WaitingList";
+import EstimatedWaitTime from "./components/EstimatedWaitTime";
 
-function App() {
-  const [message, setMessage] = useState("");
+const App = () => {
+  const [waitingList, setWaitingList] = useState([]);
+  const [currentPatient, setCurrentPatient] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/") // Call Flask backend
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((err) => console.error("Error fetching:", err));
+    fetchWaitingList();
   }, []);
 
+  const fetchWaitingList = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/waiting-list");
+      const data = await response.json();
+      setWaitingList(data.waiting_patients);
+    } catch (error) {
+      console.error("Error fetching waiting list:", error);
+    }
+  };
+
+  const addPatient = async (symptoms) => {
+    try {
+      const response = await fetch("http://localhost:5000/api/add-patient", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ symptoms }),
+      });
+      const newPatient = await response.json();
+      setCurrentPatient(newPatient);
+      fetchWaitingList();
+    } catch (error) {
+      console.error("Error adding patient:", error);
+    }
+  };
+
   return (
-    <div>
-      <h1>Vite + React</h1>
-      <p>Backend Response: {message}</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        ER Virtual Waiting Room
+      </h1>
+
+      {!currentPatient ? (
+        <SymptomForm onSubmit={addPatient} />
+      ) : (
+        <EstimatedWaitTime patient={currentPatient} />
+      )}
+
+      <WaitingList patients={waitingList} />
     </div>
   );
-}
+};
 
 export default App;

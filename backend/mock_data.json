@@ -1,0 +1,43 @@
+{
+    "waiting_patients": [
+        {
+            "id": 1,
+            "arrival_time": "2025-02-08T10:00:00",
+            "symptoms": [
+                "severe chest pain",
+                "shortness of breath"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 2,
+            "arrival_time": "2025-02-08T09:30:00",
+            "symptoms": [
+                "broken arm",
+                "moderate pain"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 3,
+            "arrival_time": "2025-02-08T09:00:00",
+            "symptoms": [
+                "fever",
+                "sore throat"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 180
+        },
+        {
+            "id": 4,
+            "arrival_time": "2025-02-08T03:22:22.076904",
+            "symptoms": [
+                "vomiting"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        }
+    ]
+}
