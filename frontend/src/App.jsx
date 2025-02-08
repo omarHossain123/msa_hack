@@ -3,14 +3,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   Navigate,
 } from "react-router-dom";
 import SymptomForm from "./components/SymptomForm";
 import WaitingList from "./components/WaitingList";
 import EstimatedWaitTime from "./components/EstimatedWaitTime";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import AuthPage from "./components/AuthPage";
 
 const App = () => {
   const [waitingList, setWaitingList] = useState([]);
@@ -20,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     fetchWaitingList();
-    // Check if user is already logged in (e.g., from localStorage)
+    // Check if user is already logged in
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -44,7 +42,7 @@ const App = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${user?.token}`, // Add token if your API requires it
+          Authorization: `Bearer ${user?.token}`,
         },
         body: JSON.stringify({ symptoms, userId: user?.id }),
       });
@@ -69,16 +67,8 @@ const App = () => {
     localStorage.removeItem("user");
   };
 
-  // Protected Route Component
-  const ProtectedRoute = ({ children }) => {
-    if (!isAuthenticated) {
-      return <Navigate to="/login" replace />;
-    }
-    return children;
-  };
-
   const MainContent = () => (
-    <div className="space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       {isAuthenticated ? (
         !currentPatient ? (
           <SymptomForm onSubmit={addPatient} />
@@ -86,18 +76,7 @@ const App = () => {
           <EstimatedWaitTime patient={currentPatient} />
         )
       ) : (
-        <div className="text-center py-8">
-          <h2 className="text-xl font-semibold mb-4">
-            Welcome to the ER Virtual Waiting Room
-          </h2>
-          <p className="mb-4">Please log in to join the queue</p>
-          <Link
-            to="/login"
-            className="text-blue-600 hover:text-blue-800 underline"
-          >
-            Log In Here
-          </Link>
-        </div>
+        <Navigate to="/auth" replace />
       )}
       <WaitingList patients={waitingList} />
     </div>
@@ -105,63 +84,52 @@ const App = () => {
 
   return (
     <Router>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-center">
-          ER Virtual Waiting Room
-        </h1>
-        <nav className="mb-8 flex justify-between items-center">
-          <div>
-            <Link to="/" className="mr-4 text-blue-600 hover:text-blue-800">
-              Home
-            </Link>
-            {!isAuthenticated && (
-              <>
-                <Link
-                  to="/login"
-                  className="mr-4 text-blue-600 hover:text-blue-800"
+      <div className="min-h-screen bg-gray-50">
+        <nav className="bg-white shadow-sm">
+          <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-4">
+              <h1 className="text-xl font-bold text-gray-900">
+                ER Virtual Waiting Room
+              </h1>
+            </div>
+            {isAuthenticated && (
+              <div className="flex items-center gap-4">
+                <span className="text-gray-600">Welcome, {user?.name}</span>
+                <button
+                  onClick={handleLogout}
+                  className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
                 >
-                  Login
-                </Link>
-                <Link
-                  to="/register"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  Register
-                </Link>
-              </>
+                  Logout
+                </button>
+              </div>
             )}
           </div>
-          {isAuthenticated && (
-            <div className="flex items-center gap-4">
-              <span className="text-gray-600">Welcome, {user?.name}</span>
-              <button
-                onClick={handleLogout}
-                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-              >
-                Logout
-              </button>
-            </div>
-          )}
         </nav>
-        <Routes>
-          <Route path="/" element={<MainContent />} />
-          <Route
-            path="/login"
-            element={
-              isAuthenticated ? (
-                <Navigate to="/" replace />
-              ) : (
-                <Login onLogin={handleLogin} />
-              )
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              isAuthenticated ? <Navigate to="/" replace /> : <Register />
-            }
-          />
-        </Routes>
+
+        <main className="container mx-auto px-4 py-8">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                isAuthenticated ? (
+                  <MainContent />
+                ) : (
+                  <Navigate to="/auth" replace />
+                )
+              }
+            />
+            <Route
+              path="/auth"
+              element={
+                isAuthenticated ? (
+                  <Navigate to="/" replace />
+                ) : (
+                  <AuthPage onLogin={handleLogin} />
+                )
+              }
+            />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
