@@ -7,9 +7,12 @@ const AuthPage = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [feedback, setFeedback] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsInvalid(false); // Reset invalid state
+
     const endpoint = isLogin ? "login_user" : "register_user";
 
     try {
@@ -30,10 +33,20 @@ const AuthPage = ({ onLogin }) => {
         setFeedback(
           data.error || `${isLogin ? "Login" : "Registration"} failed.`
         );
+        setIsInvalid(true); // Mark input as invalid
       }
     } catch (error) {
       setFeedback(`${isLogin ? "Login" : "Registration"} failed.`);
+      setIsInvalid(true); // Mark input as invalid
     }
+  };
+
+  const handleModeSwitch = () => {
+    setIsLogin(!isLogin);
+    setUsername(""); // Reset form on switch
+    setPassword("");
+    setFeedback("");
+    setIsInvalid(false);
   };
 
   return (
@@ -49,7 +62,7 @@ const AuthPage = ({ onLogin }) => {
         </h2>
 
         <form onSubmit={handleSubmit} className="auth-form">
-          <div className="form-group">
+          <div className={`form-group ${isInvalid ? "invalid" : ""}`}>
             <Mail className="input-icon" />
             <input
               type="text"
@@ -59,7 +72,7 @@ const AuthPage = ({ onLogin }) => {
             />
           </div>
 
-          <div className="form-group">
+          <div className={`form-group ${isInvalid ? "invalid" : ""}`}>
             <Lock className="input-icon" />
             <input
               type="password"
@@ -87,7 +100,7 @@ const AuthPage = ({ onLogin }) => {
         <div className="auth-switch">
           <p>
             {isLogin ? "Don't have an account?" : "Already have an account?"}
-            <button onClick={() => setIsLogin(!isLogin)}>
+            <button onClick={handleModeSwitch}>
               {isLogin ? "Sign up" : "Sign in"}
             </button>
           </p>

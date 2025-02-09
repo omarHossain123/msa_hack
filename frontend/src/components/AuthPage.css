@@ -184,4 +184,9 @@
     width: 1rem;
     height: 1rem;
   }
+  .feedback.error {
+    background-color: #fde8e8;
+    color: #b91c1c;
+    border: 1px solid #f87171;
+  }
 }
