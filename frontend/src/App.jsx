@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Bell } from "lucide-react";
+import { Heart, LogOut, Menu, X } from "lucide-react";
 import SymptomForm from "./components/SymptomForm";
 import WaitingList from "./components/WaitingList";
 import EstimatedWaitTime from "./components/EstimatedWaitTime";
@@ -17,6 +17,7 @@ const App = () => {
   const [currentPatient, setCurrentPatient] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     fetchWaitingList();
@@ -86,22 +87,31 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <nav className="navbar">
-          <div className="nav-content">
-            <div className="nav-left">
-              <Bell className="bell-icon" />
-              <h1 className="app-title">ER Virtual Waiting Room</h1>
+        <header className="header">
+          <div className="header-content">
+            <div className="logo-container">
+              <Heart className="logo-icon" />
+              <h1 className="logo-text">QCare</h1>
             </div>
+
+            <button
+              className="mobile-menu-button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X /> : <Menu />}
+            </button>
+
             {isAuthenticated && (
-              <div className="nav-right">
-                <span className="welcome-text">Welcome, {user?.name}</span>
+              <nav className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
+                <span className="username">{user?.name}</span>
                 <button onClick={handleLogout} className="logout-button">
-                  Logout
+                  <LogOut className="logout-icon" />
+                  <span>Logout</span>
                 </button>
-              </div>
+              </nav>
             )}
           </div>
-        </nav>
+        </header>
 
         <main className="main-container">
           <Routes>

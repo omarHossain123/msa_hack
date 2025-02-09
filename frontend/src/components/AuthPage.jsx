@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LockKeyhole, UserCircle2 } from "lucide-react";
+import { Heart, Mail, Lock } from "lucide-react";
 import "./AuthPage.css";
 
 const AuthPage = ({ onLogin }) => {
@@ -38,59 +38,59 @@ const AuthPage = ({ onLogin }) => {
 
   return (
     <div className="auth-container">
-      <div className="auth-box">
-        <div className="auth-header">
-          <h2>Welcome</h2>
-          <p>{isLogin ? "Sign in to your account" : "Create a new account"}</p>
+      <div className="auth-card">
+        <div className="auth-logo">
+          <Heart className="auth-logo-icon" />
+          <h1>QCare</h1>
         </div>
 
-        <div className="auth-body">
-          <form onSubmit={handleSubmit} className="auth-form">
-            <div className="auth-input-container">
-              <UserCircle2 className="auth-icon" />
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
+        <h2 className="auth-title">
+          {isLogin ? "Welcome back" : "Create your account"}
+        </h2>
 
-            <div className="auth-input-container">
-              <LockKeyhole className="auth-icon" />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-
-            {feedback && (
-              <div
-                className={`feedback-box ${
-                  feedback.includes("failed")
-                    ? "feedback-error"
-                    : "feedback-success"
-                }`}
-              >
-                {feedback}
-              </div>
-            )}
-
-            <button type="submit" className="auth-button">
-              {isLogin ? "Sign In" : "Register"}
-            </button>
-          </form>
-
-          <div className="auth-footer">
-            <p>
-              {isLogin ? "Don't have an account?" : "Already have an account?"}
-            </p>
-            <button onClick={() => setIsLogin(!isLogin)}>
-              {isLogin ? "Create an account" : "Sign in"}
-            </button>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div className="form-group">
+            <Mail className="input-icon" />
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
+
+          <div className="form-group">
+            <Lock className="input-icon" />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          {feedback && (
+            <div
+              className={`feedback ${
+                feedback.includes("failed") ? "error" : "success"
+              }`}
+            >
+              {feedback}
+            </div>
+          )}
+
+          <button type="submit" className="submit-button">
+            {isLogin ? "Sign In" : "Create Account"}
+          </button>
+        </form>
+
+        <div className="auth-switch">
+          <p>
+            {isLogin ? "Don't have an account?" : "Already have an account?"}
+            <button onClick={() => setIsLogin(!isLogin)}>
+              {isLogin ? "Sign up" : "Sign in"}
+            </button>
+          </p>
         </div>
       </div>
     </div>
