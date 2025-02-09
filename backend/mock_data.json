@@ -1,158 +1,205 @@
 {
-  "waiting_patients": [
-    {
-      "id": 1,
-      "arrival_time": "2025-02-08T10:00:00",
-      "symptoms": ["severe chest pain", "shortness of breath"],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 2,
-      "arrival_time": "2025-02-08T09:30:00",
-      "symptoms": ["broken arm", "moderate pain"],
-      "triage_level": 3,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 3,
-      "arrival_time": "2025-02-08T09:00:00",
-      "symptoms": ["fever", "sore throat"],
-      "triage_level": 4,
-      "estimated_wait_time": 180
-    },
-    {
-      "id": 4,
-      "arrival_time": "2025-02-08T03:22:22.076904",
-      "symptoms": ["vomiting"],
-      "triage_level": 4,
-      "estimated_wait_time": 60
-    },
-    {
-      "id": 5,
-      "arrival_time": "2025-02-08T13:55:28.461090",
-      "symptoms": ["chest pain"],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 6,
-      "arrival_time": "2025-02-08T14:57:55.213626",
-      "symptoms": ["chest pain"],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 7,
-      "arrival_time": "2025-02-08T17:14:27.092489",
-      "symptoms": ["sore elbow"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 8,
-      "arrival_time": "2025-02-08T17:44:05.996350",
-      "symptoms": ["sore throught"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 9,
-      "arrival_time": "2025-02-08T17:47:06.435863",
-      "symptoms": ["heart ache"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 10,
-      "arrival_time": "2025-02-08T17:47:31.390620",
-      "symptoms": ["chest pain"],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 11,
-      "arrival_time": "2025-02-08T19:23:54.420839",
-      "symptoms": ["heart ache"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 12,
-      "arrival_time": "2025-02-08T19:44:27.529767",
-      "symptoms": ["heart ache"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 13,
-      "arrival_time": "2025-02-09T09:30:02.760197",
-      "symptoms": ["broke dick"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 14,
-      "arrival_time": "2025-02-09T09:38:22.797768",
-      "symptoms": ["my wrist has been hurting and i think its swollen"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 15,
-      "arrival_time": "2025-02-09T09:40:23.229160",
-      "symptoms": ["My arm is broken"],
-      "triage_level": 3,
-      "estimated_wait_time": 30
-    },
-    {
-      "id": 16,
-      "arrival_time": "2025-02-09T09:42:03.741958",
-      "symptoms": ["my arm broken"],
-      "triage_level": 3,
-      "estimated_wait_time": 30
-    },
-    {
-      "id": 17,
-      "arrival_time": "2025-02-09T09:44:38.763286",
-      "symptoms": ["my arm broken"],
-      "triage_level": 3,
-      "estimated_wait_time": 30
-    },
-    {
-      "id": 18,
-      "arrival_time": "2025-02-09T09:47:13.270783",
-      "symptoms": ["my waterbottle fell on me and broke my skull"],
-      "triage_level": 5,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 19,
-      "arrival_time": "2025-02-09T09:56:51.934447",
-      "symptoms": ["my arm is broken"],
-      "triage_level": 3,
-      "estimated_wait_time": 30
-    },
-    {
-      "id": 20,
-      "arrival_time": "2025-02-09T09:59:19.907861",
-      "symptoms": ["arm is broken"],
-      "triage_level": 3,
-      "estimated_wait_time": 30
-    },
-    {
-      "id": 21,
-      "arrival_time": "2025-02-09T10:00:44.518209",
-      "symptoms": ["arm is broken"],
-      "triage_level": 3,
-      "estimated_wait_time": 30
-    },
-    {
-      "id": 22,
-      "arrival_time": "2025-02-09T10:08:59.076294",
-      "symptoms": ["so i fell on ice  and fractured my skull"],
-      "triage_level": 2,
-      "estimated_wait_time": 15
-    }
-  ]
+    "waiting_patients": [
+        {
+            "id": 1,
+            "arrival_time": "2025-02-08T10:00:00",
+            "symptoms": [
+                "severe chest pain",
+                "shortness of breath"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 2,
+            "arrival_time": "2025-02-08T09:30:00",
+            "symptoms": [
+                "broken arm",
+                "moderate pain"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 3,
+            "arrival_time": "2025-02-08T09:00:00",
+            "symptoms": [
+                "fever",
+                "sore throat"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 180
+        },
+        {
+            "id": 4,
+            "arrival_time": "2025-02-08T03:22:22.076904",
+            "symptoms": [
+                "vomiting"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 5,
+            "arrival_time": "2025-02-08T13:55:28.461090",
+            "symptoms": [
+                "chest pain"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 6,
+            "arrival_time": "2025-02-08T14:57:55.213626",
+            "symptoms": [
+                "chest pain"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 7,
+            "arrival_time": "2025-02-08T17:14:27.092489",
+            "symptoms": [
+                "sore elbow"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 8,
+            "arrival_time": "2025-02-08T17:44:05.996350",
+            "symptoms": [
+                "sore throught"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 9,
+            "arrival_time": "2025-02-08T17:47:06.435863",
+            "symptoms": [
+                "heart ache"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 10,
+            "arrival_time": "2025-02-08T17:47:31.390620",
+            "symptoms": [
+                "chest pain"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 11,
+            "arrival_time": "2025-02-08T19:23:54.420839",
+            "symptoms": [
+                "heart ache"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 12,
+            "arrival_time": "2025-02-08T19:44:27.529767",
+            "symptoms": [
+                "heart ache"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 13,
+            "arrival_time": "2025-02-09T09:30:02.760197",
+            "symptoms": [
+                "broke dick"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 14,
+            "arrival_time": "2025-02-09T09:38:22.797768",
+            "symptoms": [
+                "my wrist has been hurting and i think its swollen"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 15,
+            "arrival_time": "2025-02-09T09:40:23.229160",
+            "symptoms": [
+                "My arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 16,
+            "arrival_time": "2025-02-09T09:42:03.741958",
+            "symptoms": [
+                "my arm broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 17,
+            "arrival_time": "2025-02-09T09:44:38.763286",
+            "symptoms": [
+                "my arm broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 18,
+            "arrival_time": "2025-02-09T09:47:13.270783",
+            "symptoms": [
+                "my waterbottle fell on me and broke my skull"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 19,
+            "arrival_time": "2025-02-09T09:56:51.934447",
+            "symptoms": [
+                "my arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 20,
+            "arrival_time": "2025-02-09T09:59:19.907861",
+            "symptoms": [
+                "arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 21,
+            "arrival_time": "2025-02-09T10:00:44.518209",
+            "symptoms": [
+                "arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 22,
+            "arrival_time": "2025-02-09T10:08:59.076294",
+            "symptoms": [
+                "so i fell on ice  and fractured my skull"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
+        }
+    ]
 }
