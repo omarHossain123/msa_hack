@@ -1,93 +1,46 @@
-/* components/EstimatedWaitTime.css */
-.estimated-wait-container {
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.estimated-wait-box {
-  background-color: white;
+.estimated-wait-time-container {
+  padding: 2rem;
+  background-color: var(--white);
   border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
-.estimated-header {
+.estimated-wait-time-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.status-card {
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1.5rem;
+}
+
+.status-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.queue-status {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(to right, #2563eb, #06b6d4);
-  color: white;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.estimated-header h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.estimated-content {
-  padding: 1.5rem;
-}
-
-.estimated-section {
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 1px solid;
-}
-
-.triage-1 {
-  color: #dc2626;
-  border-color: #fecaca;
+.important-notice {
   background-color: #fef2f2;
-}
-
-.triage-2 {
-  color: #ea580c;
-  border-color: #fed7aa;
-  background-color: #fff7ed;
-}
-
-.triage-3 {
-  color: #ca8a04;
-  border-color: #fde047;
-  background-color: #fefce8;
-}
-
-.triage-4 {
-  color: #16a34a;
-  border-color: #bbf7d0;
-  background-color: #f0fdf4;
-}
-
-.triage-5 {
-  color: #2563eb;
-  border-color: #bfdbfe;
-  background-color: #eff6ff;
-}
-
-.wait-time {
-  border-color: #bfdbfe;
-  background-color: #eff6ff;
-}
-
-.queue-info {
+  border: 1px solid #fecaca;
   padding: 1rem;
   border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  background-color: #f9fafb;
 }
 
-.notice-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid #fcd34d;
-  background-color: #fef3c7;
-}
-
-.notice-text {
+.important-notice p {
   font-size: 0.875rem;
-  color: #92400e;
+  color: #dc2626;
 }

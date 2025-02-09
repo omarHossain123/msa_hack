@@ -27,78 +27,41 @@ const WaitingList = ({ patients }) => {
   if (!patients || patients.length === 0) {
     return (
       <div className="waiting-list-container">
-        <div className="waiting-list-card">
-          <div className="waiting-list-header">
-            <Users className="header-icon" />
-            <h2 className="header-title">Current Waiting List</h2>
-          </div>
-          <div className="waiting-list-empty">
-            <p>No patients currently in queue</p>
-          </div>
-        </div>
+        <h2 className="waiting-list-title">Current Waiting List</h2>
+        <p>No patients currently in queue.</p>
       </div>
     );
   }
 
   return (
     <div className="waiting-list-container">
-      <div className="waiting-list-card">
-        <div className="waiting-list-header">
-          <Users className="header-icon" />
-          <h2 className="header-title">Current Waiting List</h2>
-        </div>
-
-        <div className="table-container">
-          <table className="waiting-table">
-            <thead>
-              <tr className="table-header">
-                <th className="table-heading first">Position</th>
-                <th className="table-heading">Arrival Time</th>
-                <th className="table-heading">Triage Level</th>
-                <th className="table-heading last">Est. Wait Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              {patients.map((patient, index) => (
-                <tr key={patient.id} className="table-row">
-                  <td className="table-data">#{index + 1}</td>
-                  <td className="table-data">
-                    <div className="arrival-time">
-                      <Clock className="clock-icon" />
-                      {new Date(patient.arrival_time).toLocaleTimeString()}
-                    </div>
-                  </td>
-                  <td className="table-data">
-                    <span
-                      className={`triage-badge ${getTriageColor(
-                        patient.triage_level
-                      )}`}
-                    >
-                      {getTriageText(patient.triage_level)}
-                    </span>
-                  </td>
-                  <td className="table-data">
-                    <div className="wait-time">
-                      <span>{patient.estimated_wait_time}</span>
-                      <span className="time-label">mins</span>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <div className="info-section">
-          <div className="info-content">
-            <AlertCircle className="info-icon" />
-            <p className="info-text">
-              Wait times are estimates and may change based on emergency cases.
-              Patients are seen based on medical priority, not arrival time.
-            </p>
-          </div>
-        </div>
-      </div>
+      <h2 className="waiting-list-title">Current Waiting List</h2>
+      <table className="waiting-list-table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Arrival Time</th>
+            <th>Triage Level</th>
+            <th>Est. Wait Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {patients.map((patient, index) => (
+            <tr key={index}>
+              <td>#{index + 1}</td>
+              <td>{new Date(patient.arrival_time).toLocaleTimeString()}</td>
+              <td className={getTriageColor(patient.triage_level)}>
+                {getTriageText(patient.triage_level)}
+              </td>
+              <td>{patient.estimated_wait_time} mins</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="waiting-list-disclaimer">
+        Wait times are estimates and may change based on emergency cases.
+        Patients are seen based on medical priority, not arrival time.
+      </p>
     </div>
   );
 };

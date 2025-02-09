@@ -1,169 +1,66 @@
-/* Container and Card */
 .waiting-list-container {
-  max-width: 64rem;
-  margin: 0 auto;
-}
-
-.waiting-list-card {
-  background: white;
+  padding: 2rem;
+  background-color: var(--white);
   border-radius: 1rem;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
-/* Header */
-.waiting-list-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(to right, #2563eb, #06b6d4);
+.waiting-list-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
 }
 
-.header-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: white;
-}
-
-.header-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: white;
-}
-
-/* Empty State */
-.waiting-list-empty {
-  padding: 3rem;
-  text-align: center;
-  color: #6b7280;
-}
-
-/* Table */
-.table-container {
-  padding: 1.5rem;
-  overflow-x: auto;
-}
-
-.waiting-table {
+.waiting-list-table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 1.5rem;
 }
 
-.table-header {
-  background: #f9fafb;
+.waiting-list-table th,
+.waiting-list-table td {
+  padding: 0.75rem;
   text-align: left;
 }
 
-.table-heading {
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+.waiting-list-table th {
+  background-color: var(--primary-light);
+  color: var(--text-color);
   font-weight: 600;
-  color: #4b5563;
 }
 
-.table-heading.first {
-  border-top-left-radius: 0.75rem;
+.waiting-list-table td {
+  background-color: var(--white);
+  color: var(--text-color);
 }
 
-.table-heading.last {
-  border-top-right-radius: 0.75rem;
-}
-
-.table-row {
-  transition: background-color 0.15s;
-}
-
-.table-row:hover {
-  background: #f9fafb;
-}
-
-.table-data {
-  padding: 1rem 1.5rem;
-  font-size: 0.875rem;
-  color: #4b5563;
-}
-
-/* Arrival Time */
-.arrival-time {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.clock-icon {
-  width: 1rem;
-  height: 1rem;
-  color: #9ca3af;
-}
-
-/* Triage Badge */
-.triage-badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: white;
-}
-
-/* Triage Colors */
 .triage-red {
-  background: #ef4444;
+  color: #dc2626;
 }
 
 .triage-orange {
-  background: #f97316;
+  color: #ea580c;
 }
 
 .triage-yellow {
-  background: #facc15;
+  color: #eab308;
 }
 
 .triage-green {
-  background: #22c55e;
+  color: #10b981;
 }
 
 .triage-blue {
-  background: #3b82f6;
+  color: #3b82f6;
 }
 
 .triage-gray {
-  background: #6b7280;
-}
-
-/* Wait Time */
-.wait-time {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.time-label {
   color: #9ca3af;
 }
 
-/* Info Section */
-.info-section {
-  padding: 1rem 1.5rem;
-  background: #eff6ff;
-  border-top: 1px solid #dbeafe;
-}
-
-.info-content {
-  display: flex;
-  align-items: start;
-  gap: 0.75rem;
-}
-
-.info-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #2563eb;
-  margin-top: 0.125rem;
-}
-
-.info-text {
+.waiting-list-disclaimer {
   font-size: 0.875rem;
-  color: #1e3a8a;
+  color: var(--text-light);
+  margin-top: 1rem;
 }
