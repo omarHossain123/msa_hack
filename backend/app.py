@@ -37,32 +37,41 @@ def get_waiting_list():
 def add_patient():
     data = request.json
     waiting_list = load_waiting_list()
-    
-    # Assess severity using the CTAS scale
+
+    # Ensure symptoms is a list
     symptoms = data.get('symptoms', [])
+    if not isinstance(symptoms, list):  
+        symptoms = []
+
+    print("DEBUG: Received symptoms ->", symptoms)  # Add this line
+
+    if not symptoms:
+        print("ERROR: Symptoms list is empty!")
+
     triage_level = assess_severity(symptoms)
-    
-    # Calculate estimated wait time based on triage level
+
     base_wait_times = {
-        1: 0,    # Immediate
-        2: 15,   # Emergency (15 mins)
-        3: 30,   # Urgent (30 mins)
-        4: 60,   # Semi-urgent (1 hour)
-        5: 120   # Non-urgent (2 hours)
+        1: 0,  
+        2: 15,  
+        3: 30,  
+        4: 60,  
+        5: 120  
     }
-    
+
     new_patient = {
         "id": len(waiting_list["waiting_patients"]) + 1,
         "arrival_time": datetime.now().isoformat(),
         "symptoms": symptoms,
         "triage_level": triage_level,
-        "estimated_wait_time": base_wait_times[triage_level]
+        "estimated_wait_time": base_wait_times.get(triage_level, 120)
     }
-    
+
     waiting_list["waiting_patients"].append(new_patient)
     save_waiting_list(waiting_list)
-    
+
     return jsonify(new_patient)
+
+
 
 @app.route('/api/remove-patient/<int:patient_id>', methods=['DELETE'])
 def remove_patient(patient_id):
@@ -72,4 +81,5 @@ def remove_patient(patient_id):
     return jsonify({"message": "Patient removed"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+        app.run(debug=True)
+o

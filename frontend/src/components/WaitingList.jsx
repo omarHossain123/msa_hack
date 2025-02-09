@@ -1,5 +1,6 @@
+import React from "react";
 import { Users, Clock, AlertCircle } from "lucide-react";
-import "./WaitingList.css"; // Import the external CSS file
+import "./WaitingList.css";
 
 const WaitingList = ({ patients }) => {
   const getTriageColor = (level) => {

@@ -1,5 +1,6 @@
+import React from "react";
 import { Clock, AlertCircle, Activity, Users } from "lucide-react";
-import "./EstimatedWaitTime.css"; // Import the external CSS file
+import "./EstimatedWaitTime.css";
 
 const EstimatedWaitTime = ({ patient }) => {
   const getTriageDescription = (level) => {
@@ -12,6 +13,15 @@ const EstimatedWaitTime = ({ patient }) => {
     };
     return descriptions[level] || "Unknown";
   };
+
+  if (!patient) {
+    return (
+      <div className="estimated-wait-time-container loading">
+        <Activity size={24} />
+        <p>Loading wait time information...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="estimated-wait-time-container">
