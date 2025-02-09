@@ -110,6 +110,96 @@
             ],
             "triage_level": 5,
             "estimated_wait_time": 120
+        },
+        {
+            "id": 13,
+            "arrival_time": "2025-02-09T09:30:02.760197",
+            "symptoms": [
+                "broke dick"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 14,
+            "arrival_time": "2025-02-09T09:38:22.797768",
+            "symptoms": [
+                "my wrist has been hurting and i think its swollen"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 15,
+            "arrival_time": "2025-02-09T09:40:23.229160",
+            "symptoms": [
+                "My arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 16,
+            "arrival_time": "2025-02-09T09:42:03.741958",
+            "symptoms": [
+                "my arm broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 17,
+            "arrival_time": "2025-02-09T09:44:38.763286",
+            "symptoms": [
+                "my arm broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 18,
+            "arrival_time": "2025-02-09T09:47:13.270783",
+            "symptoms": [
+                "my waterbottle fell on me and broke my skull"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 19,
+            "arrival_time": "2025-02-09T09:56:51.934447",
+            "symptoms": [
+                "my arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 20,
+            "arrival_time": "2025-02-09T09:59:19.907861",
+            "symptoms": [
+                "arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 21,
+            "arrival_time": "2025-02-09T10:00:44.518209",
+            "symptoms": [
+                "arm is broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 22,
+            "arrival_time": "2025-02-09T10:08:59.076294",
+            "symptoms": [
+                "so i fell on ice  and fractured my skull"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
         }
     ]
 }
