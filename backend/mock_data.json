@@ -92,6 +92,24 @@
             ],
             "triage_level": 1,
             "estimated_wait_time": 0
+        },
+        {
+            "id": 11,
+            "arrival_time": "2025-02-08T19:23:54.420839",
+            "symptoms": [
+                "heart ache"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 12,
+            "arrival_time": "2025-02-08T19:44:27.529767",
+            "symptoms": [
+                "heart ache"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
         }
     ]
 }
