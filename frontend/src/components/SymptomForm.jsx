@@ -31,14 +31,19 @@ const SymptomForm = ({ onSubmit }) => {
     setAttachments([...attachments, ...event.target.files]);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const filteredSymptoms = symptoms.filter((s) => s.trim() !== "");
+    let filteredSymptoms = symptoms.map((s) => s.trim()).filter(Boolean); // Ensures no empty values
+
+    console.log("DEBUG: Sending Symptoms ->", filteredSymptoms);
+
     if (filteredSymptoms.length > 0) {
-      onSubmit({
-        symptoms: filteredSymptoms,
+      const patientData = {
+        symptoms: filteredSymptoms, // ✅ Ensure symptoms is a direct list
         temperature,
-        smoking_drinking_drugs: smokingDrinkingDrugs ? substanceDetails || "Yes" : "No",
+        smoking_drinking_drugs: smokingDrinkingDrugs
+          ? substanceDetails || "Yes"
+          : "No",
         pregnant: pregnant ? "Yes" : "No",
         pre_existing_conditions: preExistingConditions,
         recent_surgeries: recentSurgeries,
@@ -46,7 +51,12 @@ const SymptomForm = ({ onSubmit }) => {
         current_medications: currentMedications,
         healthcare_number: healthcareNumber,
         attachments,
-      });
+      };
+
+      console.log("DEBUG: Final Payload ->", patientData);
+      onSubmit(patientData); // Send correctly formatted data
+    } else {
+      console.error("ERROR: Symptoms list is empty!");
     }
   };
 
@@ -74,7 +84,11 @@ const SymptomForm = ({ onSubmit }) => {
             )}
           </div>
         ))}
-        <button type="button" onClick={handleAddSymptom} className="add-symptom-btn">
+        <button
+          type="button"
+          onClick={handleAddSymptom}
+          className="add-symptom-btn"
+        >
           <Plus size={16} /> Add Symptom
         </button>
 

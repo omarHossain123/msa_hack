@@ -1,115 +1,100 @@
 {
-    "waiting_patients": [
-        {
-            "id": 1,
-            "arrival_time": "2025-02-08T10:00:00",
-            "symptoms": [
-                "severe chest pain",
-                "shortness of breath"
-            ],
-            "triage_level": 1,
-            "estimated_wait_time": 0
-        },
-        {
-            "id": 2,
-            "arrival_time": "2025-02-08T09:30:00",
-            "symptoms": [
-                "broken arm",
-                "moderate pain"
-            ],
-            "triage_level": 3,
-            "estimated_wait_time": 120
-        },
-        {
-            "id": 3,
-            "arrival_time": "2025-02-08T09:00:00",
-            "symptoms": [
-                "fever",
-                "sore throat"
-            ],
-            "triage_level": 4,
-            "estimated_wait_time": 180
-        },
-        {
-            "id": 4,
-            "arrival_time": "2025-02-08T03:22:22.076904",
-            "symptoms": [
-                "vomiting"
-            ],
-            "triage_level": 4,
-            "estimated_wait_time": 60
-        },
-        {
-            "id": 5,
-            "arrival_time": "2025-02-08T13:55:28.461090",
-            "symptoms": [
-                "chest pain"
-            ],
-            "triage_level": 1,
-            "estimated_wait_time": 0
-        },
-        {
-            "id": 6,
-            "arrival_time": "2025-02-08T14:57:55.213626",
-            "symptoms": [
-                "chest pain"
-            ],
-            "triage_level": 1,
-            "estimated_wait_time": 0
-        },
-        {
-            "id": 7,
-            "arrival_time": "2025-02-08T17:14:27.092489",
-            "symptoms": [
-                "sore elbow"
-            ],
-            "triage_level": 5,
-            "estimated_wait_time": 120
-        },
-        {
-            "id": 8,
-            "arrival_time": "2025-02-08T17:44:05.996350",
-            "symptoms": [
-                "sore throught"
-            ],
-            "triage_level": 5,
-            "estimated_wait_time": 120
-        },
-        {
-            "id": 9,
-            "arrival_time": "2025-02-08T17:47:06.435863",
-            "symptoms": [
-                "heart ache"
-            ],
-            "triage_level": 5,
-            "estimated_wait_time": 120
-        },
-        {
-            "id": 10,
-            "arrival_time": "2025-02-08T17:47:31.390620",
-            "symptoms": [
-                "chest pain"
-            ],
-            "triage_level": 1,
-            "estimated_wait_time": 0
-        },
-        {
-            "id": 11,
-            "arrival_time": "2025-02-08T19:23:54.420839",
-            "symptoms": [
-                "heart ache"
-            ],
-            "triage_level": 5,
-            "estimated_wait_time": 120
-        },
-        {
-            "id": 12,
-            "arrival_time": "2025-02-08T19:44:27.529767",
-            "symptoms": [
-                "heart ache"
-            ],
-            "triage_level": 5,
-            "estimated_wait_time": 120
-        }
-    ]
+  "waiting_patients": [
+    {
+      "id": 1,
+      "arrival_time": "2025-02-08T10:00:00",
+      "symptoms": ["severe chest pain", "shortness of breath"],
+      "temperature": "",
+      "smoking_drinking_drugs": "No",
+      "pregnant": "No",
+      "pre_existing_conditions": "",
+      "recent_surgeries": "",
+      "allergies": "",
+      "current_medications": "",
+      "healthcare_number": "",
+      "attachments": [],
+      "triage_level": 1,
+      "estimated_wait_time": 0
+    },
+    {
+      "id": 2,
+      "arrival_time": "2025-02-08T09:30:00",
+      "symptoms": ["broken arm", "moderate pain"],
+      "temperature": "",
+      "smoking_drinking_drugs": "No",
+      "pregnant": "No",
+      "pre_existing_conditions": "",
+      "recent_surgeries": "",
+      "allergies": "",
+      "current_medications": "",
+      "healthcare_number": "",
+      "attachments": [],
+      "triage_level": 3,
+      "estimated_wait_time": 120
+    },
+    {
+      "id": 3,
+      "arrival_time": "2025-02-08T09:00:00",
+      "symptoms": ["fever", "sore throat"],
+      "temperature": "38.2",
+      "smoking_drinking_drugs": "No",
+      "pregnant": "No",
+      "pre_existing_conditions": "Asthma",
+      "recent_surgeries": "",
+      "allergies": "Pollen",
+      "current_medications": "Ventolin",
+      "healthcare_number": "123456789",
+      "attachments": [],
+      "triage_level": 4,
+      "estimated_wait_time": 180
+    },
+    {
+      "id": 4,
+      "arrival_time": "2025-02-08T03:22:22.076904",
+      "symptoms": ["vomiting"],
+      "temperature": "",
+      "smoking_drinking_drugs": "No",
+      "pregnant": "No",
+      "pre_existing_conditions": "",
+      "recent_surgeries": "",
+      "allergies": "",
+      "current_medications": "",
+      "healthcare_number": "",
+      "attachments": [],
+      "triage_level": 4,
+      "estimated_wait_time": 60
+    },
+    {
+      "id": 5,
+      "arrival_time": "2025-02-08T13:55:28.461090",
+      "symptoms": ["chest pain"],
+      "temperature": "",
+      "smoking_drinking_drugs": "No",
+      "pregnant": "No",
+      "pre_existing_conditions": "",
+      "recent_surgeries": "",
+      "allergies": "",
+      "current_medications": "",
+      "healthcare_number": "",
+      "attachments": [],
+      "triage_level": 1,
+      "estimated_wait_time": 0
+    },
+    {
+      "id": 6,
+      "arrival_time": "2025-02-08T14:57:55.213626",
+      "symptoms": ["chest pain"],
+      "temperature": "",
+      "smoking_drinking_drugs": "No",
+      "pregnant": "No",
+      "pre_existing_conditions": "",
+      "recent_surgeries": "",
+      "allergies": "",
+      "current_medications": "",
+      "healthcare_number": "",
+      "attachments": [],
+      "triage_level": 1,
+      "estimated_wait_time": 0
+    }
+  ]
 }
