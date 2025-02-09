@@ -1,100 +1,364 @@
 {
-  "waiting_patients": [
-    {
-      "id": 1,
-      "arrival_time": "2025-02-08T10:00:00",
-      "symptoms": ["severe chest pain", "shortness of breath"],
-      "temperature": "",
-      "smoking_drinking_drugs": "No",
-      "pregnant": "No",
-      "pre_existing_conditions": "",
-      "recent_surgeries": "",
-      "allergies": "",
-      "current_medications": "",
-      "healthcare_number": "",
-      "attachments": [],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 2,
-      "arrival_time": "2025-02-08T09:30:00",
-      "symptoms": ["broken arm", "moderate pain"],
-      "temperature": "",
-      "smoking_drinking_drugs": "No",
-      "pregnant": "No",
-      "pre_existing_conditions": "",
-      "recent_surgeries": "",
-      "allergies": "",
-      "current_medications": "",
-      "healthcare_number": "",
-      "attachments": [],
-      "triage_level": 3,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 3,
-      "arrival_time": "2025-02-08T09:00:00",
-      "symptoms": ["fever", "sore throat"],
-      "temperature": "38.2",
-      "smoking_drinking_drugs": "No",
-      "pregnant": "No",
-      "pre_existing_conditions": "Asthma",
-      "recent_surgeries": "",
-      "allergies": "Pollen",
-      "current_medications": "Ventolin",
-      "healthcare_number": "123456789",
-      "attachments": [],
-      "triage_level": 4,
-      "estimated_wait_time": 180
-    },
-    {
-      "id": 4,
-      "arrival_time": "2025-02-08T03:22:22.076904",
-      "symptoms": ["vomiting"],
-      "temperature": "",
-      "smoking_drinking_drugs": "No",
-      "pregnant": "No",
-      "pre_existing_conditions": "",
-      "recent_surgeries": "",
-      "allergies": "",
-      "current_medications": "",
-      "healthcare_number": "",
-      "attachments": [],
-      "triage_level": 4,
-      "estimated_wait_time": 60
-    },
-    {
-      "id": 5,
-      "arrival_time": "2025-02-08T13:55:28.461090",
-      "symptoms": ["chest pain"],
-      "temperature": "",
-      "smoking_drinking_drugs": "No",
-      "pregnant": "No",
-      "pre_existing_conditions": "",
-      "recent_surgeries": "",
-      "allergies": "",
-      "current_medications": "",
-      "healthcare_number": "",
-      "attachments": [],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 6,
-      "arrival_time": "2025-02-08T14:57:55.213626",
-      "symptoms": ["chest pain"],
-      "temperature": "",
-      "smoking_drinking_drugs": "No",
-      "pregnant": "No",
-      "pre_existing_conditions": "",
-      "recent_surgeries": "",
-      "allergies": "",
-      "current_medications": "",
-      "healthcare_number": "",
-      "attachments": [],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    }
-  ]
+    "waiting_patients": [
+        {
+            "id": 1,
+            "arrival_time": "2025-02-08T10:00:00",
+            "symptoms": [
+                "severe chest pain",
+                "shortness of breath"
+            ],
+            "temperature": "",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "",
+            "recent_surgeries": "",
+            "allergies": "",
+            "current_medications": "",
+            "healthcare_number": "",
+            "attachments": [],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 2,
+            "arrival_time": "2025-02-08T09:30:00",
+            "symptoms": [
+                "broken arm",
+                "moderate pain"
+            ],
+            "temperature": "",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "",
+            "recent_surgeries": "",
+            "allergies": "",
+            "current_medications": "",
+            "healthcare_number": "",
+            "attachments": [],
+            "triage_level": 3,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 3,
+            "arrival_time": "2025-02-08T09:00:00",
+            "symptoms": [
+                "fever",
+                "sore throat"
+            ],
+            "temperature": "38.2",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "Asthma",
+            "recent_surgeries": "",
+            "allergies": "Pollen",
+            "current_medications": "Ventolin",
+            "healthcare_number": "123456789",
+            "attachments": [],
+            "triage_level": 4,
+            "estimated_wait_time": 180
+        },
+        {
+            "id": 4,
+            "arrival_time": "2025-02-08T03:22:22.076904",
+            "symptoms": [
+                "vomiting"
+            ],
+            "temperature": "",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "",
+            "recent_surgeries": "",
+            "allergies": "",
+            "current_medications": "",
+            "healthcare_number": "",
+            "attachments": [],
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 5,
+            "arrival_time": "2025-02-08T13:55:28.461090",
+            "symptoms": [
+                "chest pain"
+            ],
+            "temperature": "",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "",
+            "recent_surgeries": "",
+            "allergies": "",
+            "current_medications": "",
+            "healthcare_number": "",
+            "attachments": [],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 6,
+            "arrival_time": "2025-02-08T14:57:55.213626",
+            "symptoms": [
+                "chest pain"
+            ],
+            "temperature": "",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "",
+            "recent_surgeries": "",
+            "allergies": "",
+            "current_medications": "",
+            "healthcare_number": "",
+            "attachments": [],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 7,
+            "arrival_time": "2025-02-09T10:04:34.332540",
+            "symptoms": [],
+            "temperature": "",
+            "smoking_drinking_drugs": "No",
+            "pregnant": "No",
+            "pre_existing_conditions": "",
+            "recent_surgeries": "",
+            "allergies": "",
+            "current_medications": "",
+            "healthcare_number": "",
+            "attachments": [],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 8,
+            "arrival_time": "2025-02-09T10:25:32.450335",
+            "symptoms": {
+                "symptoms": [
+                    "i was in the gym and a dumbbell fell on my foot and i think its broken"
+                ],
+                "temperature": "",
+                "smoking_drinking_drugs": "Yes",
+                "pregnant": "No",
+                "pre_existing_conditions": "cancer",
+                "recent_surgeries": "no",
+                "allergies": "no",
+                "current_medications": "",
+                "healthcare_number": "123",
+                "attachments": []
+            },
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 9,
+            "arrival_time": "2025-02-09T10:26:37.666750",
+            "symptoms": {
+                "symptoms": [
+                    "i was in the gym and a dumbbell fell on my foot and i think it might be broken"
+                ],
+                "temperature": "",
+                "smoking_drinking_drugs": "No",
+                "pregnant": "No",
+                "pre_existing_conditions": "",
+                "recent_surgeries": "",
+                "allergies": "",
+                "current_medications": "",
+                "healthcare_number": "",
+                "attachments": []
+            },
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 10,
+            "arrival_time": "2025-02-09T10:28:34.789182",
+            "symptoms": {
+                "symptoms": [
+                    "i think my foot is broken"
+                ],
+                "temperature": "",
+                "smoking_drinking_drugs": "No",
+                "pregnant": "No",
+                "pre_existing_conditions": "",
+                "recent_surgeries": "",
+                "allergies": "",
+                "current_medications": "",
+                "healthcare_number": "",
+                "attachments": []
+            },
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 11,
+            "arrival_time": "2025-02-09T10:33:15.783991",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 12,
+            "arrival_time": "2025-02-09T10:34:05.068870",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 13,
+            "arrival_time": "2025-02-09T10:34:27.215460",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 14,
+            "arrival_time": "2025-02-09T10:34:50.421211",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 15,
+            "arrival_time": "2025-02-09T10:37:09.040220",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 16,
+            "arrival_time": "2025-02-09T10:48:05.971736",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 17,
+            "arrival_time": "2025-02-09T10:53:32.096337",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 18,
+            "arrival_time": "2025-02-09T10:54:44.286649",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 19,
+            "arrival_time": "2025-02-09T10:54:52.878296",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 20,
+            "arrival_time": "2025-02-09T11:01:43.526750",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 21,
+            "arrival_time": "2025-02-09T11:01:44.507429",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 22,
+            "arrival_time": "2025-02-09T11:03:29.610965",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 23,
+            "arrival_time": "2025-02-09T11:05:56.425536",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 24,
+            "arrival_time": "2025-02-09T11:06:08.801772",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 25,
+            "arrival_time": "2025-02-09T11:06:09.820146",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 26,
+            "arrival_time": "2025-02-09T11:09:48.074297",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 27,
+            "arrival_time": "2025-02-09T11:09:50.697447",
+            "symptoms": [],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 28,
+            "arrival_time": "2025-02-09T11:11:44.022055",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 29,
+            "arrival_time": "2025-02-09T11:13:15.751867",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 30,
+            "arrival_time": "2025-02-09T11:13:45.924808",
+            "symptoms": [
+                "i was in the gym and a dumbbell fell on my foot and i think its broken"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 30
+        },
+        {
+            "id": 31,
+            "arrival_time": "2025-02-09T11:14:14.110997",
+            "symptoms": [
+                "i was stabbed in the stomach and am bleeding"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
+        }
+    ]
 }
