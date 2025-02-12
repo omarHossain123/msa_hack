@@ -1,39 +1,142 @@
 {
-  "waiting_patients": [
-    {
-      "id": 1,
-      "arrival_time": "2025-02-08T10:00:00",
-      "symptoms": ["severe chest pain", "shortness of breath"],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    },
-    {
-      "id": 2,
-      "arrival_time": "2025-02-08T09:30:00",
-      "symptoms": ["broken arm", "moderate pain"],
-      "triage_level": 3,
-      "estimated_wait_time": 120
-    },
-    {
-      "id": 3,
-      "arrival_time": "2025-02-08T09:00:00",
-      "symptoms": ["fever", "sore throat"],
-      "triage_level": 4,
-      "estimated_wait_time": 180
-    },
-    {
-      "id": 4,
-      "arrival_time": "2025-02-08T03:22:22.076904",
-      "symptoms": ["vomiting"],
-      "triage_level": 4,
-      "estimated_wait_time": 60
-    },
-    {
-      "id": 5,
-      "arrival_time": "2025-02-08T13:55:28.461090",
-      "symptoms": ["chest pain"],
-      "triage_level": 1,
-      "estimated_wait_time": 0
-    }
-  ]
+    "waiting_patients": [
+        {
+            "id": 1,
+            "arrival_time": "2025-02-08T10:00:00",
+            "symptoms": [
+                "severe chest pain",
+                "shortness of breath"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 2,
+            "arrival_time": "2025-02-08T09:30:00",
+            "symptoms": [
+                "broken arm",
+                "moderate pain"
+            ],
+            "triage_level": 3,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 3,
+            "arrival_time": "2025-02-08T09:00:00",
+            "symptoms": [
+                "fever",
+                "sore throat"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 180
+        },
+        {
+            "id": 4,
+            "arrival_time": "2025-02-08T03:22:22.076904",
+            "symptoms": [
+                "vomiting"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 5,
+            "arrival_time": "2025-02-08T13:55:28.461090",
+            "symptoms": [
+                "chest pain"
+            ],
+            "triage_level": 1,
+            "estimated_wait_time": 0
+        },
+        {
+            "id": 6,
+            "arrival_time": "2025-02-09T11:55:24.521008",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 7,
+            "arrival_time": "2025-02-09T11:56:18.232782",
+            "symptoms": [
+                "I have sever heart ache"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
+        },
+        {
+            "id": 8,
+            "arrival_time": "2025-02-09T12:20:19.326748",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 9,
+            "arrival_time": "2025-02-09T12:27:05.769157",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 10,
+            "arrival_time": "2025-02-09T12:27:51.151435",
+            "symptoms": [
+                "i have sever heart ache"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
+        },
+        {
+            "id": 11,
+            "arrival_time": "2025-02-09T13:03:13.327603",
+            "symptoms": [
+                "i have sever heart ache"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
+        },
+        {
+            "id": 12,
+            "arrival_time": "2025-02-09T13:04:37.904894",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 13,
+            "arrival_time": "2025-02-09T13:06:22.249414",
+            "symptoms": [
+                "my head hurts"
+            ],
+            "triage_level": 4,
+            "estimated_wait_time": 60
+        },
+        {
+            "id": 14,
+            "arrival_time": "2025-02-09T14:18:14.682262",
+            "symptoms": [
+                "i have a mild cough"
+            ],
+            "triage_level": 5,
+            "estimated_wait_time": 120
+        },
+        {
+            "id": 15,
+            "arrival_time": "2025-02-09T14:18:53.277569",
+            "symptoms": [
+                "i have a sever heart ache"
+            ],
+            "triage_level": 2,
+            "estimated_wait_time": 15
+        }
+    ]
 }
