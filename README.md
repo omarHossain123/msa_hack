@@ -17,3 +17,5 @@ Live Waiting List: Displays all patients and their estimated wait times.
 Real-time Notifications: Alerts patients when their turn is approaching.
 
 Patient History: Stores user data for future visits.
+
+Demo Video can be found here: https://www.loom.com/share/47142f22243b41d49cd81da3884819ad?sid=f5578265-a085-4c75-988b-b5190fd4edff
